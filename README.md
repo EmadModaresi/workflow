@@ -1,2 +1,2 @@
 # workflow
-working with viewflow and django-river
+working with viewflow and django-river.

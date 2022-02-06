@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import demoriver, demoviewflow
+from demoriver import urls
+import demoviewflow
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('river/', include(demoriver.urls)),
+    path('river/', include(urls)),
     path('viewflow/', include(demoviewflow.urls)),
 ]

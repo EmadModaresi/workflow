@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'river',
     'river_admin',
+    'material',
+    'material.frontend',
+    'viewflow',
+    'viewflow.frontend',
+
 ]
 
 MIDDLEWARE = [

@@ -9,7 +9,7 @@ from .models import Shoping
 class ShopingFlow(Flow):
     process_class = Shoping
     start = (
-        flow.Start(CreateProcessView, fields=["text"]).Permission(auto_create=True).Next(this.approve)
+        flow.Start(CreateProcessView, fields=["text",]).Permission(auto_create=True).Next(this.approve)
     )
 
     approve = (

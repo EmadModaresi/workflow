@@ -16,10 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from demoriver import urls
-import demoviewflow
+from demoviewflow import urls as urls2
+from django.urls import include, path
+from django.views import generic
+from material.frontend import urls as frontend_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('river/', include(urls)),
-    path('viewflow/', include(demoviewflow.urls)),
+    path('river/', include(urls), name="river_test"),
+    path('viewflow/', include(urls2), name='viewflow_test'),
+    path(r'', generic.RedirectView.as_view(url='/workflow/', permanent=False)),
+    path(r'', include(frontend_urls)),
 ]

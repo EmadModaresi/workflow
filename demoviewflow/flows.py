@@ -9,7 +9,8 @@ from .models import Shoping
 class ShopingFlow(Flow):
     process_class = Shoping
     start = (
-        flow.Start(CreateProcessView, fields=["text",]).Permission(auto_create=True).Next(this.approve)
+        flow.Start(CreateProcessView, fields=["shop_name", "buier_name"]).Permission(auto_create=True).Next(
+            this.approve)
     )
 
     approve = (
@@ -26,8 +27,6 @@ class ShopingFlow(Flow):
     end = flow.End()
 
     def send_a_factor(self):
-        count = 0
-        for shop in Shoping.objects.all():
-            count += shop.foods.price
+        count = 12500000
         print(count)
         return count

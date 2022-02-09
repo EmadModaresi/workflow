@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'viewflow.frontend',
     'demoriver',
     'demoviewflow',
+    'viewflow'
 
 ]
 
